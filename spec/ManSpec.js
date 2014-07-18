@@ -41,8 +41,10 @@ describe('Man should', function() {
     expect(man.grow.bind(man,true)).toThrow();
   }); 
     
-  it('check changeName to be function',function(){
+  it('check changeName to be function and so on',function(){
     expect(man.changeName).toEqual(jasmine.any(Function));
+    expect(man.name).toEqual(jasmine.any(String));
+    expect(man.gender).toBeDefined();
   }); 
 
 });
