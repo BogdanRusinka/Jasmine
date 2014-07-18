@@ -17,3 +17,7 @@ Student.prototype.takeExams = function(areResultsFine) {
 		throw new Error('areResultsFine should be a boolean value');
 	}
 };
+
+Student.prototype.getSchoolName = function(){
+	return this.school;
+}

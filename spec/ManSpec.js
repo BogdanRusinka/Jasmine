@@ -23,15 +23,26 @@ describe('Man should', function() {
     expect(customMan.name).toEqual('Sanya');
   });
   
-  it('take custom name', function(){
-    var customMan = new Man({
-      name: 'Sanya'
-    });
-    expect(customMan.name).toEqual('Sanya');
-  });
+  it('change name',function(){
+    man.changeName('Frederic');
+    expect(man.name).toEqual('Frederic');
+  });  
 
-  /***
-    more tests should be added
-  **/
+  it('grow',function(){
+    man.grow();
+    expect(man.age).toEqual(6);
+    man.grow(2,3);
+    expect(man.age).toEqual(8);
+  });  
+
+  it('throw error',function(){
+    expect(man.changeName).toThrow(new Error('Name should be a string'));
+    expect(man.grow.bind(man,"dfg")).toThrow();
+    expect(man.grow.bind(man,true)).toThrow();
+  }); 
+    
+  it('check changeName to be function',function(){
+    expect(man.changeName).toEqual(jasmine.any(Function));
+  }); 
 
 });
