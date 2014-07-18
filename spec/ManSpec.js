@@ -47,4 +47,9 @@ describe('Man should', function() {
     expect(man.gender).toBeDefined();
   }); 
 
+  it('spies for its own function with parameters',function(){
+    spyOn(man, 'grow');
+    man.grow(13);
+    expect(man.grow).toHaveBeenCalledWith(13);
+  }); 
 });
